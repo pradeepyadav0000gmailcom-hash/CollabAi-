@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #0a0a0f;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0d0d1a; }
+  ::-webkit-scrollbar-thumb { background: #2d2d3d; border-radius: 3px; }
+  ::selection { background: #7c3aed40; color: #e2e8f0; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl
+           hover:from-brand-400 hover:to-blue-500 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-surface;
+  }
+  .btn-secondary {
+    @apply border border-surface-border text-slate-300 font-semibold px-6 py-3 rounded-xl
+           hover:border-brand-500 hover:text-brand-300 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-surface;
+  }
+  .card {
+    @apply bg-surface-1 border border-surface-border rounded-2xl;
+  }
+  .input-field {
+    @apply w-full bg-surface-2 border border-surface-border text-slate-200 rounded-xl px-4 py-3
+           placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500
+           transition-colors duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-300 via-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+  .glow {
+    box-shadow: 0 0 40px #7c3aed20, 0 4px 24px #0006;
+  }
+}
